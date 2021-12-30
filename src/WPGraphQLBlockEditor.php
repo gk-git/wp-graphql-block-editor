@@ -1,7 +1,9 @@
 <?php
 // Global. - namespace WPGraphQL\BlockEditor
-
-class WPGraphQLBlockEditor {
+	
+	use WPGraphQL\Registry\TypeRegistry;
+	
+	class WPGraphQLBlockEditor {
 
 	private static $instance;
 
@@ -117,6 +119,7 @@ class WPGraphQLBlockEditor {
 			if ( file_exists( WPGRAPHQL_BLOCK_EDITOR_PLUGIN_DIR . 'vendor/autoload.php' ) ) {
 				// Autoload Required Classes.
 				require_once WPGRAPHQL_BLOCK_EDITOR_PLUGIN_DIR . 'vendor/autoload.php';
+
 			}
 
 			// If GraphQL class doesn't exist, then dependencies cannot be
@@ -151,7 +154,7 @@ class WPGraphQLBlockEditor {
 
 	public function actions() {
 
-		add_action( 'graphql_register_types', function( \WPGraphQL\Registry\TypeRegistry $type_registry ) {
+		add_action( 'graphql_register_types', function( TypeRegistry $type_registry ) {
 
 			$block_editor_registry = new WPGraphQL\BlockEditor\Registry\Registry( $type_registry );
 			$block_editor_registry->init();

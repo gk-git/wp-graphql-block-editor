@@ -39,13 +39,13 @@ class Registry {
 	 */
 	public function init() {
 
-		register_graphql_object_type( 'EditorBlockSpacing', [
-			'fields' => [
-				'padding' => [
-					'type' => 'Boolean',
-				],
-			],
-		]);
+//		register_graphql_object_type( 'EditorBlockSpacing', [
+//			'fields' => [
+//				'padding' => [
+//					'type' => 'Boolean',
+//				],
+//			],
+//		]);
 
 		register_graphql_object_type( 'EditorBlockSupports', [
 			'fields' => [
@@ -58,15 +58,15 @@ class Registry {
 				'anchor' => [
 					'type' => 'Boolean',
 				],
-				'align' => [
-					'type' => 'BlockAlignment',
-				],
-				'__experimentalSelector' => [
-					'type' => 'String',
-				],
-				'__experimentalFontFamily' => [
-					'type' => 'Boolean',
-				],
+//				'align' => [
+//					'type' => 'BlockAlignment',
+//				],
+//				'__experimentalSelector' => [
+//					'type' => 'String',
+//				],
+//				'__experimentalFontFamily' => [
+//					'type' => 'Boolean',
+//				],
 				'fontSize' => [
 					'type' => 'Boolean',
 				],
@@ -79,9 +79,9 @@ class Registry {
 				"reusable" => [
 					'type' => 'Boolean',
 				],
-				"spacing" => [
-					'type' => 'BlockEditorSpacing'
-				],
+//				"spacing" => [
+//					'type' => 'BlockEditorSpacing'
+//				],
 
 			]
 		]);
