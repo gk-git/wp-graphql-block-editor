@@ -76,11 +76,11 @@ class EditorBlockInterface {
 
 						$parsed_blocks = array_map( function( $parsed_block ) {
 							$parsed_block['nodeId'] = uniqid();
-							wp_send_json( $parsed_block );
+//							wp_send_json( $parsed_block );
 							return $parsed_block;
 						}, $parsed_blocks );
 
-						wp_send_json( serialize_blocks( $parsed_blocks ) );
+//						wp_send_json( serialize_blocks( $parsed_blocks ) );
 
 						return $parsed_blocks;
 					}
