@@ -96,6 +96,15 @@ class EditorBlockInterface {
 					'type'        => 'String',
 					'description' => __( 'The name of the Block', 'wp-graphql-block-editor' ),
 				],
+				'innerBlocks' => [
+					'type'=>[
+						'list_of' => 'EditorBlock',
+					],
+					'description' => __( 'The name of the category the Block belongs to', 'wp-graphql-block-editor' ),
+					'resolve'     => function( $block ) {
+						return isset( $block['innerBlocks'] ) && is_array( $block['innerBlocks'] ) ? $block['innerBlocks'] : [];
+					},
+				],
 				'blockEditorCategoryName' => [
 					'type'        => 'String',
 					'description' => __( 'The name of the category the Block belongs to', 'wp-graphql-block-editor' ),
